@@ -1,0 +1,230 @@
+
+.container{
+    padding: 0px 16px;
+}
+.contact-label{
+    font-weight: $weight-bold;
+}
+
+.contact-number{
+    color: $gold-crayola;
+    max-width: max-content;
+    margin: 0px auto; 
+    &::after{
+        bottom: -5px;
+    }
+}
+
+
+
+.header .btn{
+     display: none;
+    }
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 40px 0;
+    z-index: 4;
+    border-block-end: 1px solid transparent;
+    transition: $transition-1;
+
+    //.header .container
+    .container{
+        padding-inline: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        gap: 8px
+    }
+}
+
+.header.active{
+    padding-block: 20px;
+    background-color: $eerie-black-4;
+    border-color: $black-alpha-15;
+}
+
+.header.hide {
+    transform: translateY(-150%);
+    transition-delay: 250ms;
+  }
+
+// .header .container{
+//     padding-inline: 20px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items:center;
+//     gap: 8px
+// }
+
+
+//khathaye menu bala samt rast
+.nav-open-btn{
+    padding: 12px;
+    padding-inline-end: 0;
+}
+
+.nav-open-btn{ 
+
+> .line{
+    width: 30px;
+    height: 2px;
+    background-color: $white;
+    margin-block: 4px;
+    transform-origin: left;
+    animation: menuBtn 400ms ease-in-out alternate infinite;
+}
+}
+
+.nav-open-btn{
+    > .line-2{
+        animation-delay: 150ms;
+    }
+}
+
+.nav-open-btn{
+    > .line-3{
+        animation-delay: 300ms;
+    }
+}
+
+.navbar{
+    position: fixed;
+    background-color: $smoky-black-1;
+    top: 0;
+    left: -360px;
+    bottom: 0;
+    max-width: 360px;
+    width: 100%;
+    padding-inline: 30px;
+    padding-block-end: 50px;
+    overflow-y: auto;
+    visibility: hidden;
+    z-index: 2;
+    transition: $transition-2;
+}
+
+.navbar.active{
+    visibility: visible;
+    transform: translateX(360px);
+}
+
+
+.navbar{
+    >.close-btn{
+        color: $white;
+        border: 1px solid currentColor;
+        padding: 4px;
+        border-radius: $radius-circle;
+        margin-inline-start: auto;
+        margin-block: 30px 20px;
+        
+        
+        &:is(:hover, :focus-visible){
+            color: $gold-crayola;
+        }
+    }
+
+
+}
+
+.navbar .close-btn ion-icon { --ionicon-stroke-width: 40px; }
+
+
+.navbar .logo {
+    max-width: max-content;
+    margin-inline: auto;
+    margin-block-end: 60px;
+  }
+
+.navbar-list {
+  border-block-end: 1px solid var(--white-alpha-20);
+  margin-block-end: 100px;
+}
+.navbar-item{
+    border-block-start: 1px solid $white-alpha-20;
+}
+
+.navbar-link {
+    position: relative;
+    font-size: var(--fontSize-label-2);
+    text-transform: uppercase;
+    padding-block: 10px;
+    max-width: unset;
+
+    &::after{
+        display: none;
+    }
+
+    >.span{
+        transition: $transition-1;
+    }
+
+    >.separator{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        opacity: 0;
+        transition: $transition-1;
+    }
+
+    
+  }
+
+.navbar-link:is(:hover, :focus-visible, .active) .span{
+        color: $gold-crayola;
+        transform: translateX(20px);
+    }
+
+.navbar-link:is(:hover, :focus-visible, .active) .separator{
+        opacity: 1;
+    }
+
+.navbar-title{ margin-block-end: 15px;}
+.navbar-text { margin-block: 10px; }
+
+.slidebar-link{ 
+    transition: $transition-1;
+    &:hover{
+        color: $gold-crayola;
+    }
+}
+
+.text-center{
+    text-align: center;
+
+    &__separator{
+        margin-block: 30px;
+        margin-inline: auto;
+    }
+}
+
+
+.navbar{
+    .body-4 { color:$quick-silver; }
+    .contact-label{margin-block-end: 10px;}
+    &::-webkit-scrollbar-thumb { background-color: $white-alpha-10; }
+} 
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--black-alpha-80);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-2);
+    z-index: 1;
+&.active{
+    opacity: 1;
+    pointer-events: all;
+}
+}
+
