@@ -21,3 +21,8 @@ This is the front-end of a restaurant website created using HTML, SASS, CSS, and
 To view this project, simply clone the repository and open the index.html file in your browser.
 
 https://github.com/Nargeskhl/ReyhanRestaurant.git
+
+## Live Demo
+
+Check out the live demo of the project 
+https://nargeskhl.github.io/ReyhanRestaurant/
